@@ -22,6 +22,7 @@ public abstract class NotesRoomDatabase extends RoomDatabase {
 
     private static volatile NotesRoomDatabase INSTANCE;
 
+    //run on 4 threads
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriterExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     static NotesRoomDatabase getDatabase(final Context context) {
@@ -39,6 +40,7 @@ public abstract class NotesRoomDatabase extends RoomDatabase {
 
     }
 
+    //callback class to provide start values for the database when first created
     private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
 
         @Override

@@ -15,11 +15,13 @@ import com.glencconnnect.notekeeper.room_models.NotesRepository;
 
 import java.util.List;
 
+
+//sits as an intermediary between repository of data and the UI (MainActivity)
+
 public class NotesViewModel extends AndroidViewModel {
 
     private NotesRepository mRepository;
     private final LiveData<List<Notes>> mAllNotes;
-
     public NotesViewModel(@NonNull Application application) {
         super(application);
         mRepository = new NotesRepository(application);
