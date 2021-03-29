@@ -20,8 +20,8 @@ public abstract class NotesRoomDatabase extends RoomDatabase {
 
     public abstract NotesDao notesDao();
 
-
     private static volatile NotesRoomDatabase INSTANCE;
+
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriterExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     static NotesRoomDatabase getDatabase(final Context context) {
