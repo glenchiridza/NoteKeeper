@@ -31,6 +31,9 @@ public class Notes{
     @ColumnInfo(name = "date")
     private String mDate;
 
+    @ColumnInfo(name = "category")
+    private String mCategory;
+
     public Notes(@NonNull String notes, @NonNull String mSubTitle, @NonNull String mDescription, @NonNull String mDate){
         this.mNotes = notes;
         this.mSubTitle = mSubTitle;
@@ -52,6 +55,14 @@ public class Notes{
 
     public String getDate() {
         return mDate;
+    }
+
+    public String getCategory() {
+        return mCategory;
+    }
+
+    public void setCategory(String mCategory) {
+        this.mCategory = mCategory;
     }
 }
 
