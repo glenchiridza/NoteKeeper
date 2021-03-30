@@ -21,21 +21,33 @@ public class NotesRepository {
         mAllNotes = mNotesDao.getOrderedNotes();
     }
 
+    //get all notes from dao
     public LiveData<List<Notes>> getAllNotes() {
         return mAllNotes;
     }
 
+    //insert notes thru dao
     public void insert(Notes notes) {
         NotesRoomDatabase.databaseWriterExecutor.execute(()->{
             mNotesDao.insert(notes);
                 });
     }
 
+    //delete singular note
+    public void deleteNote(Notes note){
+        NotesRoomDatabase.databaseWriterExecutor.execute(()->{
+            mNotesDao.deleteNote(note);
+        });
+
+    }
+
+    //delete all noted via dao
     public void deleteAll (){
         NotesRoomDatabase.databaseWriterExecutor.execute(()->{
             mNotesDao.deleteAll();
         });
     }
+
 
 
 }
