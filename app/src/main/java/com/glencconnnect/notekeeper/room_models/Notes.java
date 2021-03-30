@@ -45,6 +45,17 @@ public class Notes{
         this.mDate = mDate;
     }
 
+    //using @ignore cause room requires only one constructor
+
+    @Ignore
+    public Notes(int id, @NonNull String notes, @NonNull String mSubTitle, @NonNull String mDescription, @NonNull String mDate){
+        this.id = id;
+        this.mNotes = notes;
+        this.mSubTitle = mSubTitle;
+        this.mDescription = mDescription;
+        this.mDate = mDate;
+    }
+
 
     public int getId() {
         return id;
