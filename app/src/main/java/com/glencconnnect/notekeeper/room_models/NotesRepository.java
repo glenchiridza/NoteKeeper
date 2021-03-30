@@ -31,6 +31,12 @@ public class NotesRepository {
                 });
     }
 
+    public void deleteAll (){
+        NotesRoomDatabase.databaseWriterExecutor.execute(()->{
+            mNotesDao.deleteAll();
+        });
+    }
+
 
 }
 

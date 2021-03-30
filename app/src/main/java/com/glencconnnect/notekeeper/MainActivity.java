@@ -1,5 +1,6 @@
 package com.glencconnnect.notekeeper;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.glencconnnect.notekeeper.recycler_view.NotesListAdapter;
@@ -54,5 +57,26 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(getApplicationContext(), "note wasn't saved, did you do it right?", Toast.LENGTH_LONG).show();
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_clear_all){
+            Toast.makeText(this, "Notes deleted", Toast.LENGTH_SHORT).show();
+
+            //delete the data
+            mViewModel.deleteAll();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

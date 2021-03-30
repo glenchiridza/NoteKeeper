@@ -10,5 +10,6 @@
     <string name="button_cancel">Cancel</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="date_picker">datePicker</string>
+    <string name="clear_all">clear all</string>
 
 </resources>

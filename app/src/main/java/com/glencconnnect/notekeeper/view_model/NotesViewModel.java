@@ -31,6 +31,8 @@ public class NotesViewModel extends AndroidViewModel {
     public LiveData<List<Notes>> getAllNotes(){return mAllNotes;}
 
     public void insert(Notes notes){mRepository.insert(notes);}
+
+    public void deleteAll(){mRepository.deleteAll();}
 }
 
 
