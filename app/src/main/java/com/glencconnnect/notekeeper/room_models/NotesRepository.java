@@ -33,6 +33,13 @@ public class NotesRepository {
                 });
     }
 
+    //update
+    public void update(Notes note){
+        NotesRoomDatabase.databaseWriterExecutor.execute(()->{
+            mNotesDao.update(note);
+        });
+    }
+
     //delete singular note
     public void deleteNote(Notes note){
         NotesRoomDatabase.databaseWriterExecutor.execute(()->{

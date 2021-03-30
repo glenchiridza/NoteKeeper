@@ -7,6 +7,7 @@ package com.glencconnnect.notekeeper.room_models;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "notes_table")
@@ -14,7 +15,9 @@ public class Notes{
 //    @PrimaryKey(autoGenerate = true)
 //    private int id;
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
     @NonNull
     @ColumnInfo(name="notes")
     private String mNotes;
@@ -34,11 +37,21 @@ public class Notes{
     @ColumnInfo(name = "category")
     private String mCategory;
 
-    public Notes(@NonNull String notes, @NonNull String mSubTitle, @NonNull String mDescription, @NonNull String mDate){
+    public Notes( @NonNull String notes, @NonNull String mSubTitle, @NonNull String mDescription, @NonNull String mDate){
+
         this.mNotes = notes;
         this.mSubTitle = mSubTitle;
         this.mDescription = mDescription;
         this.mDate = mDate;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNotes(){ return this.mNotes;}
