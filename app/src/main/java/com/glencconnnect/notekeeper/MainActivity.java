@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        touchHelper.attachToRecyclerView(recyclerView);
     }
 
     @Override

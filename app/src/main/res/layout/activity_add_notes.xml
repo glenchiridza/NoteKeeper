@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:minHeight="10dp"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/hint_subtitle"
+        android:hint="@string/hint_description"
         android:inputType="textMultiLine|textCapSentences"
         android:layout_margin="16dp"
         android:textSize="18sp"/>
