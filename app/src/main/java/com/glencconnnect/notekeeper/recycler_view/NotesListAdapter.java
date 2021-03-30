@@ -32,6 +32,10 @@ public class NotesListAdapter extends ListAdapter<Notes, NotesViewHolder> {
         holder.bind(current.getNotes(), current.getSubTitle(), current.getDate());
     }
 
+    public Notes getNotePos(int pos){
+        return getItem(pos);
+    }
+
     public static class NotesDiff extends DiffUtil.ItemCallback<Notes> {
 
         @Override
