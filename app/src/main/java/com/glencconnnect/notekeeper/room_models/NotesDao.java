@@ -6,6 +6,7 @@ package com.glencconnnect.notekeeper.room_models;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -17,6 +18,9 @@ public interface NotesDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Notes notes);
+
+    @Delete
+    void deleteNote(Notes note);
 
     @Query("DELETE FROM notes_table")
     void deleteAll();
